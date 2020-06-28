@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EPAM LOGIN FORM</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        function validate() {
+            const mail = document.getElementById("mail");
+            const pwd = document.getElementById("pwd");
+            var f = 0;
+            var warn = "";
+
+            if (mail.value.trim() == "" || mail.value == null) {
+                f = 1;
+                warn = warn.concat("email id field cannot be empty. \n");
+            }
+            if (pwd.value == "" || pwd.value == null) {
+                f = 1;
+                warn = warn.concat("password field cannot be empty. \n");
+            }
+            if (f == 0) {
+                alert("successfully login")
+            }
+            else {
+                alert(warn);
+            }
+        }
+    </script>
+</head>
+
+<body>
+        <div class="details">
+
+            <div class="headsign"><h2>LOGIN</h2></div>
+            <form>
+
+                <div>
+                    <input type="text" class="mail" placeholder="mail@example.com" id="mail">
+                </div>
+
+                <br>
+
+                <div>
+                    <input type="password" class="mail" placeholder="password" id="pwd">
+                </div>
+
+                <br>
+
+                <div>
+                    <button type="submit" class="sign" onclick="validate()"> SIGN IN </button>
+                </div>
+
+            </form>
+
+            <br>
+
+
+            <div class="forgot" align ="center"><a href="#">forgot your password?</a></div>
+            <div class="register" align ="center"><a href="register.html">Register</a></div>
+
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EPAM LOGIN FORM</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        
+        function validate() {
+            const username = document.getElementById("user name");
+            const mail = document.getElementById("mail");
+            const pwd = document.getElementById("pwd");
+            const cpwd = document.getElementById("cpwd");
+            var f = 0;
+            var warn = "";
+            if (username.value.trim() == "" || username.value == null) {
+                f = 1;
+                warn = warn.concat("user name field cannot be empty. \n");
+            }
+            if (mail.value.trim() == "" || mail.value == null) {
+                f = 1;
+                warn = warn.concat("email id field cannot be empty. \n");
+            }
+            if (pwd.value == "" || pwd.value == null) {
+                f = 1;
+                warn = warn.concat("password field cannot be empty. \n");
+            }
+            if (cpwd.value == "" || cpwd.value == null || cpwd.value != pwd.value) {
+                f = 1;
+                warn = warn.concat("passwords invalid or doesn't match.")
+            }
+            if (f == 0) {
+                alert("Successfully registered");
+            }
+            else {
+                alert(warn);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="details">
+
+        <div class="headsign"><h2>REGISTER</h2></div>
+        <form name=" form">
+
+            <div>
+                <input type="text" class="mail" placeholder="user name" id="user name">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="text" class="mail" placeholder="mail@example.com" id="mail">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="password" class="mail" placeholder="password" id="pwd">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="password" class="mail" placeholder="confirm password" id="cpwd">
+            </div>
+
+            <br>
+
+            <div>
+                <button type="submit" class="sign" onclick="validate()">SIGN UP</button>
+            </div>
+
+        </form>
+
+        <br>
+
+        <div class="login" align="center"><a href="login.html">Login</a></div>
+
+    </div>
+
+</body>
+
+</html>
